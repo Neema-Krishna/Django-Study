@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background color for the page */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Make the body take up the full viewport height */
+            margin: 0; /* Remove default margin to ensure full viewport coverage */
+        }
+        table {
+            {% comment %} background-color: #aaf0aa; {% endcomment %}
+            border-collapse: collapse;
+            width: 80%;
+             
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+        }
+        tr {
+            border: 1px solid #000;
+        }
+    </style>
+
+
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Education</th>
+            <th>Place</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in viewdata%}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.education }}</td>
+            <td>{{ i.place }}</td>
+            <td><a href="{% url 'regdelete' i.id %}"><button>Delete</button></a></td>
+
+        </tr>
+
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>

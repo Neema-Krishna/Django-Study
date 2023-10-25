@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%block title%} Document {% endblock %}
+
+
+{% block content%}
+  <h1>Hello</h1>
+  <h1>{{ data }}</h1> 
+  {% if data%}
+     <h2>Ok</h2>
+  {% else%}
+      <h2>Not Ok</h2>
+  {%endif%}
+
+  {% for i in data1%}
+     <li>{{i}}</li>
+  {% endfor %}
+
+
+{% endblock %}
+     
